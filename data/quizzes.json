@@ -1,0 +1,49 @@
+[
+  {
+    "id": "1",
+    "title": "Riconoscimento Boleti",
+    "description": "Metti alla prova la tua abilità nel riconoscere le varie specie di Boletus.",
+    "questions": [
+      {
+        "id": "q1_1",
+        "text": "Quale di questi è comunemente noto come Porcino edule?",
+        "options": [
+          { "id": "a", "text": "Boletus aereus", "image": "boletus_aereus.jpg" },
+          { "id": "b", "text": "Boletus edulis", "image": "boletus_edulis.jpg" },
+          { "id": "c", "text": "Boletus reticulatus", "image": "boletus_reticulatus.jpg" },
+          { "id": "d", "text": "Boletus pinophilus", "image": "boletus_pinophilus.jpg" }
+        ],
+        "correctOption": "b"
+      },
+      {
+        "id": "q1_2",
+        "text": "Quale boleto presenta tipicamente un cappello dal colore bronzo/nero?",
+        "options": [
+          { "id": "a", "text": "Boletus aereus", "image": "boletus_aereus.jpg" },
+          { "id": "b", "text": "Boletus satanas", "image": "boletus_satanas.jpg" },
+          { "id": "c", "text": "Boletus edulis", "image": "boletus_edulis.jpg" },
+          { "id": "d", "text": "Suillus luteus", "image": "suillus_luteus.jpg" }
+        ],
+        "correctOption": "a"
+      }
+    ]
+  },
+  {
+    "id": "2",
+    "title": "Velenosi o Commestibili?",
+    "description": "Attento a non avvelenarti! Scegli il fungo commestibile.",
+    "questions": [
+      {
+        "id": "q2_1",
+        "text": "Quale tra questi funghi è mortale?",
+        "options": [
+          { "id": "a", "text": "Amanita phalloides", "image": "amanita_phalloides.jpg" },
+          { "id": "b", "text": "Amanita caesarea", "image": "amanita_caesarea.jpg" },
+          { "id": "c", "text": "Macrolepiota procera", "image": "macrolepiota_procera.jpg" },
+          { "id": "d", "text": "Cantharellus cibarius", "image": "cantharellus_cibarius.jpg" }
+        ],
+        "correctOption": "a"
+      }
+    ]
+  }
+]

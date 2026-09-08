@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Svolgimento Quiz - MycoQuiz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body class="quiz-body">
+    <nav class="sticky-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🍄 MycoQuiz</a>
+        </div>
+    </nav>
+
+    <main class="container quiz-container">
+        <!-- Loading State -->
+        <div id="loading-state" class="state-message">
+            <div class="spinner"></div>
+            <p>Preparazione del quiz...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-state" class="state-message hidden">
+            <p>⚠️ Errore nel caricamento del quiz. Verifica la connessione.</p>
+            <a href="index.html" class="btn">Torna alla Home</a>
+        </div>
+
+        <!-- Quiz Interface (Hidden initially) -->
+        <div id="quiz-interface" class="quiz-interface hidden">
+            <div class="quiz-header">
+                <h2 id="quiz-title">Titolo Quiz</h2>
+                <div class="timer" id="timer">00:00</div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
+            <p class="question-counter">Domanda <span id="current-q-num">1</span> di <span id="total-q-num">?</span></p>
+
+            <div class="question-box">
+                <h3 id="question-text">Testo della domanda?</h3>
+                
+                <div class="options-grid" id="options-grid">
+                    <!-- Le opzioni (A, B, C, D) con immagini verranno generate qui -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Risultato Finale -->
+        <div id="result-interface" class="result-interface hidden">
+            <h2>Quiz Completato!</h2>
+            <p>Il tuo punteggio è: <span id="final-score"></span> / <span id="final-total"></span></p>
+            <p id="save-status"></p>
+            <a href="index.html" class="btn">Torna ai Quiz</a>
+        </div>
+
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>

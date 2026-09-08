@@ -1,0 +1,305 @@
+/* Variabili di base */
+:root {
+    --primary: #2b7a0b;
+    --primary-light: #5bb318;
+    --primary-dark: #1f5407;
+    --bg-color: #f7f9f6;
+    --text-color: #333;
+    --white: #ffffff;
+    --gray: #ccc;
+    --danger: #e63946;
+    --success: #2a9d8f;
+    --glass-bg: rgba(255, 255, 255, 0.9);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Typography */
+h1, h2, h3 {
+    margin-bottom: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header */
+.hero-header {
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../assets/images/header_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 350px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 800;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Navbar */
+.sticky-navbar {
+    position: sticky;
+    top: 0;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: var(--primary-dark);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--primary);
+}
+
+/* Layout Main */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.intro-section {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Quiz Grid (Flexbox/Grid per l'esame) */
+.quiz-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Quiz Card */
+.quiz-card {
+    background: var(--white);
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.quiz-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.quiz-card h3 {
+    color: var(--primary-dark);
+}
+
+.quiz-card p {
+    margin: 1rem 0;
+    flex-grow: 1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: var(--primary-light);
+}
+
+/* Stati (Loading, Error, Empty) */
+.hidden {
+    display: none !important;
+}
+
+.state-message {
+    text-align: center;
+    padding: 3rem;
+    background: var(--white);
+    border-radius: 12px;
+}
+
+.spinner {
+    border: 4px solid rgba(0,0,0,0.1);
+    border-left-color: var(--primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+
+/* --------- Quiz UI ----------- */
+.quiz-body {
+    background-color: #f0f4eb;
+}
+
+.quiz-container {
+    max-width: 800px;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.timer {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--danger);
+    background: #ffe5e5;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #eee;
+    height: 10px;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 10px;
+    background-color: var(--primary);
+    border-radius: 5px;
+    width: 0%;
+    transition: width 0.3s;
+}
+
+.question-counter {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 2rem;
+    text-align: right;
+}
+
+.question-box h3 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* Opzioni Domanda a griglia come da mockup */
+.options-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+@media(min-width: 768px) {
+    .options-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.option-card {
+    border: 2px solid var(--gray);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+.option-card:hover {
+    border-color: var(--primary);
+    transform: scale(1.02);
+}
+
+.option-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+}
+
+.option-label {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    background: #f9f9f9;
+}
+
+/* Risultato UI */
+.result-interface {
+    text-align: center;
+}
+
+.result-interface h2 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+}
+
+.result-interface p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+    color: #666;
+}

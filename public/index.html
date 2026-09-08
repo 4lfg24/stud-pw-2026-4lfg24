@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MycoQuiz - Esplora i Quiz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header class="hero-header">
+        <div class="hero-content">
+            <h1>MycoQuiz</h1>
+            <p>Metti alla prova le tue conoscenze micologiche</p>
+        </div>
+    </header>
+
+    <nav class="sticky-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🍄 MycoQuiz</a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="intro-section">
+            <h2>Seleziona un Quiz</h2>
+            <p>Scegli tra i vari temi disponibili per testare quanto ne sai sui funghi.</p>
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading-state" class="state-message">
+            <div class="spinner"></div>
+            <p>Caricamento quiz in corso...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-state" class="state-message hidden">
+            <p>⚠️ Impossibile caricare i quiz. Controlla la tua connessione o riprova più tardi.</p>
+            <button id="retry-btn" class="btn">Riprova</button>
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="state-message hidden">
+            <p>🪹 Nessun quiz attualmente disponibile, torna più tardi!</p>
+        </div>
+
+        <!-- Quiz Grid -->
+        <div id="quiz-grid" class="quiz-grid hidden">
+            <!-- Quiz cards will be injected here via JS -->
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 MycoQuiz - Esame Programmazione Web</p>
+    </footer>
+
+    <script src="js/api.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
