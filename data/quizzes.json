@@ -8,10 +8,26 @@
         "id": "q1_1",
         "text": "Quale di questi è comunemente noto come Porcino edule?",
         "options": [
-          { "id": "a", "text": "Boletus aereus", "image": "boletus_aereus.jpg" },
-          { "id": "b", "text": "Boletus edulis", "image": "boletus_edulis.jpg" },
-          { "id": "c", "text": "Boletus reticulatus", "image": "boletus_reticulatus.jpg" },
-          { "id": "d", "text": "Boletus pinophilus", "image": "boletus_pinophilus.jpg" }
+          {
+            "id": "a",
+            "text": "Boletus aereus",
+            "image": "boletus_aereus.jpg"
+          },
+          {
+            "id": "b",
+            "text": "Boletus edulis",
+            "image": "boletus_edulis.jpg"
+          },
+          {
+            "id": "c",
+            "text": "Boletus reticulatus",
+            "image": "boletus_reticulatus.jpg"
+          },
+          {
+            "id": "d",
+            "text": "Boletus pinophilus",
+            "image": "boletus_pinophilus.jpg"
+          }
         ],
         "correctOption": "b"
       },
@@ -19,10 +35,26 @@
         "id": "q1_2",
         "text": "Quale boleto presenta tipicamente un cappello dal colore bronzo/nero?",
         "options": [
-          { "id": "a", "text": "Boletus aereus", "image": "boletus_aereus.jpg" },
-          { "id": "b", "text": "Boletus satanas", "image": "boletus_satanas.jpg" },
-          { "id": "c", "text": "Boletus edulis", "image": "boletus_edulis.jpg" },
-          { "id": "d", "text": "Suillus luteus", "image": "suillus_luteus.jpg" }
+          {
+            "id": "a",
+            "text": "Boletus aereus",
+            "image": null
+          },
+          {
+            "id": "b",
+            "text": "Boletus satanas",
+            "image": null
+          },
+          {
+            "id": "c",
+            "text": "Boletus edulis",
+            "image": null
+          },
+          {
+            "id": "d",
+            "text": "Suillus luteus",
+            "image": null
+          }
         ],
         "correctOption": "a"
       }
@@ -37,10 +69,307 @@
         "id": "q2_1",
         "text": "Quale tra questi funghi è mortale?",
         "options": [
-          { "id": "a", "text": "Amanita phalloides", "image": "amanita_phalloides.jpg" },
-          { "id": "b", "text": "Amanita caesarea", "image": "amanita_caesarea.jpg" },
-          { "id": "c", "text": "Macrolepiota procera", "image": "macrolepiota_procera.jpg" },
-          { "id": "d", "text": "Cantharellus cibarius", "image": "cantharellus_cibarius.jpg" }
+          {
+            "id": "a",
+            "text": "Amanita phalloides",
+            "image": "amanita_phalloides.jpg"
+          },
+          {
+            "id": "b",
+            "text": "Amanita caesarea",
+            "image": "amanita_caesarea.jpg"
+          },
+          {
+            "id": "c",
+            "text": "Macrolepiota procera",
+            "image": "macrolepiota_procera.png"
+          },
+          {
+            "id": "d",
+            "text": "Cantharellus cibarius",
+            "image": "cantharellus_cibarius.png"
+          }
+        ],
+        "correctOption": "a"
+      }
+    ]
+  },
+  {
+    "id": "3",
+    "title": "Famiglia Amanita",
+    "description": "Metti alla prova le tue conoscenze sui funghi della famiglia Amanita.",
+    "questions": [
+      {
+        "id": "q3_1",
+        "text": "Quale di questi funghi è un Amanita Caesarea?",
+        "options": [
+          {
+            "id": "a",
+            "text": "",
+            "image": "amanita_caesarea_1788882480043.jpg"
+          },
+          {
+            "id": "b",
+            "text": "",
+            "image": "amanita_muscaria_1788882496429.jpg"
+          },
+          {
+            "id": "c",
+            "text": "",
+            "image": "amanita_phalloides_1788882509072.jpg"
+          },
+          {
+            "id": "d",
+            "text": "",
+            "image": "amanita_pantherina_1788882521926.jpg"
+          }
+        ],
+        "correctOption": "a"
+      },
+      {
+        "id": "q3_2",
+        "text": "Quale di queste amanite emana un odore di ravanello?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Amanita crocea",
+            "image": "amanita_crocea_1788882589712.jpg"
+          },
+          {
+            "id": "b",
+            "text": "Amanita fulva",
+            "image": "amanita_fulva_1788882575719.jpg"
+          },
+          {
+            "id": "c",
+            "text": "Amanita citrina",
+            "image": "amanita_citrina_1788882550038.jpg"
+          },
+          {
+            "id": "d",
+            "text": "Amanita rubescens",
+            "image": "amanita_rubescens_1788882563698.jpg"
+          }
+        ],
+        "correctOption": "c"
+      },
+      {
+        "id": "q3_3",
+        "text": "Quale di queste amanite è bianca in ogni sua parte?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Amanita virosa",
+            "image": null
+          },
+          {
+            "id": "b",
+            "text": "Amanita phalloides",
+            "image": null
+          },
+          {
+            "id": "c",
+            "text": "Amanita pantherina",
+            "image": null
+          },
+          {
+            "id": "d",
+            "text": "Amanita muscaria",
+            "image": null
+          }
+        ],
+        "correctOption": "a"
+      }
+    ]
+  },
+  {
+    "id": "4",
+    "title": "Famiglia Russula",
+    "description": "Metti alla prova le tue conoscenze sui funghi della famiglia Russula.",
+    "questions": [
+      {
+        "id": "q4_1",
+        "text": "Quale di queste Russule è conosciuta come la Russula Olivacea?",
+        "options": [
+          {
+            "id": "a",
+            "text": "",
+            "image": "russula_olivacea_1788883445479.jpg"
+          },
+          {
+            "id": "b",
+            "text": "",
+            "image": "russula_cyanoxantha_1788883455518.jpg"
+          },
+          {
+            "id": "c",
+            "text": "",
+            "image": "russula_virescens_1788883466936.jpg"
+          },
+          {
+            "id": "d",
+            "text": "",
+            "image": "russula_vesca_1788883495053.jpg"
+          }
+        ],
+        "correctOption": "a"
+      },
+      {
+        "id": "q4_2",
+        "text": "Quale di queste Russule è la Russula Aurata?",
+        "options": [
+          {
+            "id": "a",
+            "text": "",
+            "image": "russula_emetica_1788883548619.jpg"
+          },
+          {
+            "id": "b",
+            "text": "",
+            "image": "russula_aurata.png"
+          },
+          {
+            "id": "c",
+            "text": "",
+            "image": "russula_nobilis.png"
+          },
+          {
+            "id": "d",
+            "text": "",
+            "image": "russula_sanguinaria.jpg"
+          }
+        ],
+        "correctOption": "b"
+      },
+      {
+        "id": "q4_3",
+        "text": "Quale di queste Russule è quella con l'odore più pungente?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Russula virescens",
+            "image": null
+          },
+          {
+            "id": "b",
+            "text": "Russula cyanoxantha",
+            "image": null
+          },
+          {
+            "id": "c",
+            "text": "Russula rosacea",
+            "image": null
+          },
+          {
+            "id": "d",
+            "text": "Russula aurea",
+            "image": null
+          }
+        ],
+        "correctOption": "c"
+      }
+    ]
+  },
+  {
+    "id": "5",
+    "title": "Funghi bizzarri",
+    "description": "Metti alla prova le tue conoscenze su alcuni funghi dalla forma o caratteristiche molto particolari.",
+    "questions": [
+      {
+        "id": "q5_1",
+        "text": "Quale di questi funghi assomiglia a una spugna o a un nido d'ape?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Morchella esculenta",
+            "image": null
+          },
+          {
+            "id": "b",
+            "text": "Clavariadelphus pistillaris",
+            "image": null
+          },
+          {
+            "id": "c",
+            "text": "Macrolepiota procera",
+            "image": null
+          },
+          {
+            "id": "d",
+            "text": "Cantharellus cibarius",
+            "image": null
+          }
+        ],
+        "correctOption": "a"
+      },
+      {
+        "id": "q5_2",
+        "text": "Quale di questi funghi viene chiamato comunemente mazza di tamburo?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Cantharellus cibarius",
+            "image": "cantharellus_cibarius.png"
+          },
+          {
+            "id": "b",
+            "text": "Macrolepiota procera",
+            "image": "macrolepiota_procera.png"
+          },
+          {
+            "id": "c",
+            "text": "Lycoperdon giganteum",
+            "image": "lycoperdon_giganteum.png"
+          },
+          {
+            "id": "d",
+            "text": "Morchella esculenta",
+            "image": "morchella_esculenta.png"
+          }
+        ],
+        "correctOption": "b"
+      },
+      {
+        "id": "q5_3",
+        "text": "Quale di queste specie, non è biologicamente considerata un vero e proprio fungo a lamelle poiché presenta delle pieghe?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Cantharellus cibarius",
+            "image": null
+          },
+          {
+            "id": "b",
+            "text": "Macrolepiota procera",
+            "image": null
+          },
+          {
+            "id": "c",
+            "text": "Clavariadelphus pistillaris",
+            "image": null
+          },
+          {
+            "id": "d",
+            "text": "Lycoperdon giganteum",
+            "image": null
+          }
+        ],
+        "correctOption": "a"
+      },
+      {
+        "id": "q5_4",
+        "text": "È vero che il Lycoperdon Giganteum viene chiamato comunemente Vescica maggiore?",
+        "options": [
+          {
+            "id": "a",
+            "text": "Vero",
+            "image": null
+          },
+          {
+            "id": "b",
+            "text": "Falso",
+            "image": null
+          }
         ],
         "correctOption": "a"
       }

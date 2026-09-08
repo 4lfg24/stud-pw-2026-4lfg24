@@ -102,12 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
         question.options.forEach((opt, index) => {
             const card = document.createElement('div');
             card.className = 'option-card';
-
-            const imgSrc = opt.image ? `assets/images/${opt.image}` : `https://via.placeholder.com/150?text=Immagine+${labels[index]}`;
-
+            let imgHtml = '';
+            if (opt.image !== null) {
+                const imgSrc = opt.image ? `assets/images/${opt.image}` : `https://via.placeholder.com/150?text=Immagine+${labels[index]}`;
+                imgHtml = `<img src="${imgSrc}" class="option-img" alt="Opzione ${labels[index]}" onerror="this.src='https://via.placeholder.com/150?text=N/A'">`;
+            }
+            
+            // onerror="..." è un hack HTML utilissimo: intercetta l'errore del browser qualora l'immagine 
+            // fisicamente non venisse trovata (404 image not found) e ricarica un'immagine di scorta di default.
             card.innerHTML = `
-                <img src="${imgSrc}" class="option-img" alt="Opzione ${labels[index]}" onerror="this.src='https://via.placeholder.com/150?text=N/A'">
-                <div class="option-label">${labels[index]}</div>
+                ${imgHtml}
+                <div class="option-label">${labels[index]} ${opt.text ? '- ' + opt.text : ''}</div>
             `;
 
 
