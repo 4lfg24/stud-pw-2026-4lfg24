@@ -76,6 +76,25 @@ document.addEventListener('DOMContentLoaded', () => {
     // Associa un ascoltatore di eventi al tasto "Riprova": al 'click', esegui nuovamente loadQuizzes
     retryBtn.addEventListener('click', loadQuizzes);
 
+    // Logica per aggiornare l'interfaccia utente in base all'autenticazione
+    const authNavItem = document.getElementById('auth-nav-item');
+    if (authNavItem) {
+        const token = localStorage.getItem('auth_token');
+        const username = localStorage.getItem('username');
+        if (token && username) {
+            authNavItem.innerHTML = `
+                <a href="scores.html" id="scores-btn" style="margin-right: 15px; cursor: pointer;">Mostra punteggi</a>
+                <a href="#" id="logout-btn">Logout (${username})</a>
+            `;
+            document.getElementById('logout-btn').addEventListener('click', (e) => {
+                e.preventDefault();
+                localStorage.removeItem('auth_token');
+                localStorage.removeItem('username');
+                window.location.reload();
+            });
+        }
+    }
+
     // Boot dell'applicazione: Eseguiamo immediatamente il caricamento iniziale appena la pagina è pronta
     loadQuizzes();
 });

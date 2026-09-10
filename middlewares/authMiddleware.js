@@ -42,4 +42,24 @@ const verifyToken = (req, res, next) => {
     }
 };
 
-module.exports = { verifyToken, SECRET_KEY };
+const optionalVerifyToken = (req, res, next) => {
+    const authHeader = req.headers['authorization'];
+    if (!authHeader) {
+        return next();
+    }
+
+    const token = authHeader.split(' ')[1];
+    if (!token) {
+        return next();
+    }
+
+    try {
+        const decoded = jwt.verify(token, SECRET_KEY);
+        req.user = decoded;
+    } catch (err) {
+        // Ignoriamo l'errore se il token è scaduto o invalido, trattiamo come utente anonimo
+    }
+    next();
+};
+
+module.exports = { verifyToken, optionalVerifyToken, SECRET_KEY };

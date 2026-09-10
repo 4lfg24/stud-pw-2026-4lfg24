@@ -11,6 +11,14 @@ const BASE_URL = 'http://localhost:3000/api';
 
 async function fetchApi(endpoint, options = {}) {
     try {
+        const token = localStorage.getItem('auth_token');
+        if (token) {
+            options.headers = {
+                ...options.headers,
+                'Authorization': `Bearer ${token}`
+            };
+        }
+
         // 'await' mette in pausa l'esecuzione di questa funzione finché la risposta di rete non arriva
         const response = await fetch(`${BASE_URL}${endpoint}`, options);
 
@@ -37,6 +45,9 @@ const API = {
     // Chiama GET /api/quizzes/:id
     getQuizById: (id) => fetchApi(`/quizzes/${id}`),
 
+    // Chiama GET /api/scores/best
+    getBestScores: () => fetchApi('/scores/best'),
+
     // Invia dati al server tramite POST /api/scores
     saveScore: (data) => fetchApi('/scores', {
         method: 'POST', // Specifichiamo il verbo POST per inviare (creare) dati
@@ -46,5 +57,23 @@ const API = {
         },
         // Serializziamo l'oggetto JS 'data' trasformandolo in stringa JSON da allegare nel body HTTP
         body: JSON.stringify(data)
+    }),
+
+    // Invia credenziali al server tramite POST /api/auth/login
+    login: (credentials) => fetchApi('/auth/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
+    }),
+
+    // Invia credenziali per la registrazione tramite POST /api/auth/register
+    register: (credentials) => fetchApi('/auth/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(credentials)
     })
 };

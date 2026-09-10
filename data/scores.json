@@ -246,5 +246,37 @@
     "score": 4,
     "total": 4,
     "date": "2026-09-08T16:43:47.705Z"
+  },
+  {
+    "id": "1789032238947",
+    "username": "AlfredoG",
+    "quizId": "5",
+    "score": 4,
+    "total": 4,
+    "date": "2026-09-10T09:23:58.947Z"
+  },
+  {
+    "id": "1789032990348",
+    "username": "AlfredoG",
+    "quizId": "3",
+    "score": 2,
+    "total": 3,
+    "date": "2026-09-10T09:36:30.348Z"
+  },
+  {
+    "id": "1789033553675",
+    "username": "AlfredoG",
+    "quizId": "4",
+    "score": 1,
+    "total": 3,
+    "date": "2026-09-10T09:45:53.675Z"
+  },
+  {
+    "id": "1789033566634",
+    "username": "AlfredoG",
+    "quizId": "1",
+    "score": 2,
+    "total": 2,
+    "date": "2026-09-10T09:46:06.634Z"
   }
 ]

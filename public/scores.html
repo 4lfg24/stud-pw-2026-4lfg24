@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Tuoi Punteggi - MycoQuiz</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="sticky-navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-brand">🍄 MycoQuiz</a>
+        </div>
+    </nav>
+
+    <main class="container" style="max-width: 800px; margin-top: 2rem;">
+        <div style="background: var(--surface); padding: 2rem; border-radius: 12px; box-shadow: var(--shadow);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2 style="margin: 0;">I Tuoi Punteggi Migliori</h2>
+                <a href="index.html" class="btn" style="padding: 0.5rem 1rem;">Torna alla Home</a>
+            </div>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Ecco la classifica dei tuoi risultati per ogni quiz completato.</p>
+            
+            <div id="scores-table-container">
+                <div class="spinner"></div>
+                <p style="text-align:center;">Caricamento...</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/api.js"></script>
+    <script src="js/scores.js"></script>
+</body>
+</html>
