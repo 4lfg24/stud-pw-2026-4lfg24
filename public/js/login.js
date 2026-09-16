@@ -1,5 +1,4 @@
 /**
- * js/login.js
  * Gestisce la logica di login dell'utente.
  */
 
@@ -15,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const showRegisterLink = document.getElementById('show-register');
     const showLoginLink = document.getElementById('show-login');
 
+    //logica per cambiare da register a log in cliccando il link
     if (showRegisterLink && showLoginLink) {
         showRegisterLink.addEventListener('click', (e) => {
             e.preventDefault();
@@ -32,26 +32,26 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loginForm) {
         loginForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             // Nascondi i messaggi precedenti
             errorDiv.classList.add('hidden');
             successDiv.classList.add('hidden');
-            
+
             const usernameInput = document.getElementById('username').value;
             const passwordInput = document.getElementById('password').value;
-            
+
             try {
                 // Chiamata all'API di login
                 const response = await API.login({ username: usernameInput, password: passwordInput });
-                
+
                 // Se la chiamata ha successo, salva il token e l'username
                 if (response.token) {
                     localStorage.setItem('auth_token', response.token);
                     localStorage.setItem('username', response.username);
-                    
+
                     // Mostra successo
                     successDiv.classList.remove('hidden');
-                    
+
                     // Reindirizza alla home dopo 1 secondo
                     setTimeout(() => {
                         window.location.href = 'index.html';
@@ -68,28 +68,28 @@ document.addEventListener('DOMContentLoaded', () => {
     if (registerForm) {
         registerForm.addEventListener('submit', async (e) => {
             e.preventDefault();
-            
+
             // Nascondi i messaggi precedenti
             regErrorDiv.classList.add('hidden');
             regSuccessDiv.classList.add('hidden');
-            
+
             const usernameInput = document.getElementById('reg-username').value;
             const passwordInput = document.getElementById('reg-password').value;
-            
+
             try {
                 // Chiamata all'API di registrazione
                 await API.register({ username: usernameInput, password: passwordInput });
-                
+
                 // Mostra successo
                 regSuccessDiv.classList.remove('hidden');
-                
+
                 // Effettua subito il login automatico
                 const response = await API.login({ username: usernameInput, password: passwordInput });
-                
+
                 if (response.token) {
                     localStorage.setItem('auth_token', response.token);
                     localStorage.setItem('username', response.username);
-                    
+
                     // Reindirizza alla home dopo 1 secondo
                     setTimeout(() => {
                         window.location.href = 'index.html';

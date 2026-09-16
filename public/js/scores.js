@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         const bestScores = await API.getBestScores();
-        
+
         if (bestScores.length === 0) {
             tableContainer.innerHTML = '<p style="text-align:center;">Non hai ancora completato nessun quiz.</p>';
             return;
@@ -40,9 +40,9 @@ document.addEventListener('DOMContentLoaded', async () => {
                 </tbody>
             </table>
         `;
-        
+
         tableContainer.innerHTML = tableHTML;
-        
+
     } catch (err) {
         tableContainer.innerHTML = '<p style="color:var(--danger); text-align:center;">Errore nel caricamento dei punteggi.</p>';
     }

@@ -1,5 +1,3 @@
-
-
 //Questo file gestisce le richieste API per salvare e leggere i punteggi dei quiz.
 
 const express = require('express');
@@ -90,12 +88,9 @@ router.get('/', (req, res) => {
  * Scopo: Salvare un nuovo punteggio completato al termine di un quiz.
  */
 router.post('/', optionalVerifyToken, (req, res) => {
-    // Estraiamo (Destructuring) i dati dal corpo della richiesta (req.body)
     const { quizId, score, total } = req.body;
 
-    // VALIDAZIONE LATO SERVER (MOLTO IMPORTANTE PER L'ESAME)
     // Controlliamo che il client ci abbia mandato tutti i dati necessari.
-    // Usiamo '!== undefined' perché 'score' potrebbe essere '0', e !0 è valutato come 'true' (falso positivo in javascript).
     if (!quizId || score === undefined || total === undefined) {
         // Se i dati mancano o sono errati, blocchiamo la richiesta con uno status 400 (Bad Request)
         return res.status(400).json({ error: "Dati invalidi: mancano parametri per salvare il punteggio" });

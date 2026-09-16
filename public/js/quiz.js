@@ -1,25 +1,21 @@
 /**
- * js/quiz.js
- * Core logic dell'applicazione per l'utente (Svolgimento del Quiz).
  * Gestisce l'estrazione dei parametri URL, il cronometro a decremento, 
  * l'avanzamento delle domande, e l'invio finale del risultato al server.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- ESTARZIONE QUERY STRING ---
     // Leggiamo i parametri dall'URL della pagina (es: /quiz.html?id=2)
     const urlParams = new URLSearchParams(window.location.search);
     const quizId = urlParams.get('id'); // Estrae il valore associato alla chiave 'id'
 
-    // Se l'utente tenta di accedere a quiz.html senza un ID valido, lo rimandiamo alla home.
+    // Se l'utente tenta di accedere ad un quiz con ID invalido, lo rimandiamo alla home.
     if (!quizId) {
         window.location.href = 'index.html';
-        return; // Interrompe l'esecuzione del codice sottostante
+        return;
     }
 
     // --- DIZIONARIO UI ---
-    // Raduno tutti i selettori del DOM così da averli a portata
     const UI = {
         loading: document.getElementById('loading-state'),
         error: document.getElementById('error-state'),
@@ -107,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const imgSrc = opt.image ? `assets/images/${opt.image}` : `https://via.placeholder.com/150?text=Immagine+${labels[index]}`;
                 imgHtml = `<img src="${imgSrc}" class="option-img" alt="Opzione ${labels[index]}" onerror="this.src='https://via.placeholder.com/150?text=N/A'">`;
             }
-            
+
             // onerror="..." è un hack HTML utilissimo: intercetta l'errore del browser qualora l'immagine 
             // fisicamente non venisse trovata (404 image not found) e ricarica un'immagine di scorta di default.
             card.innerHTML = `
@@ -144,8 +140,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (timeLeft <= 0) {
                 // TEMPO SCADUTO!
                 clearInterval(timerInterval);
-                // Forzo la risposta. Passare null al posto di selectedId garantirà che l'utente perda il punto per la domanda
-                //(forse poi lo cambio e gli passo l'ultimo id selezionato)
+                // Forzo la risposta.
                 handleAnswer(null, quizData.questions[currentQuestionIndex].correctOption);
             }
         }, 1000);
@@ -161,9 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const handleAnswer = (selectedId, correctId) => {
-        // Fermiamo prima il timer per fermare il panico
-        clearInterval(timerInterval);
 
+        clearInterval(timerInterval);
         // Validazione della risposta (se uguali, aggiungi 1 punto)
         if (selectedId === correctId) {
             score++;

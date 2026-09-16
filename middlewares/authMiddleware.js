@@ -1,6 +1,5 @@
 /**
- * middlewares/authMiddleware.js
- * Questo file definisce un "Middleware" custom per proteggere le rotte di Express.
+ * middleware custom per proteggere le rotte di Express.
  * Il suo compito è intercettare la richiesta HTTP prima che arrivi alla funzione della rotta,
  * estrarre il token JWT dall'intestazione, validarlo e bloccare l'accesso se invalido.
  */
@@ -19,7 +18,7 @@ const verifyToken = (req, res, next) => {
         return res.status(401).json({ error: "Accesso negato. Token mancante." });
     }
 
-    // 2. Il formato standard è "Bearer <il_tuo_token_molto_lungo>".
+    // 2. Il formato standard è "Bearer <token>".
     // Quindi splittiamo lo spazio e prendiamo il secondo elemento.
     const token = authHeader.split(' ')[1];
     if (!token) {
@@ -30,7 +29,6 @@ const verifyToken = (req, res, next) => {
     try {
         // La funzione verify lancia un'eccezione (error) se il token è falso, manipolato o scaduto
         const decoded = jwt.verify(token, SECRET_KEY);
-
         // Se la decodifica ha successo, iniettiamo le informazioni dell'utente direttamente nell'oggetto `req`.
         // In questo modo, le rotte successive potranno usare ad es. `req.user.username`.
         req.user = decoded;
@@ -42,7 +40,7 @@ const verifyToken = (req, res, next) => {
     }
 };
 
-const optionalVerifyToken = (req, res, next) => {
+const optionalVerifyToken = (req, res, next) => { //per permettere anche ai giocatori anonimi di giocare
     const authHeader = req.headers['authorization'];
     if (!authHeader) {
         return next();

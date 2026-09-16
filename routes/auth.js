@@ -5,7 +5,7 @@
 
 const express = require('express');
 const router = express.Router();
-const fs = require('fs');
+const fs = require('fs'); //core
 const path = require('path');
 const jwt = require('jsonwebtoken'); // Libreria per creare (sign) e validare i token JWT
 
@@ -48,7 +48,7 @@ router.post('/register', (req, res) => {
     const newUser = {
         id: Date.now().toString(),
         username: username,
-        password: password //NOTA: più tardi la crittograferemo
+        password: password
     };
 
     users.push(newUser);

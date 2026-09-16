@@ -49,7 +49,6 @@ router.get('/', (req, res) => {
 /**
  * Endpoint: GET /api/quizzes/:id
  * Scopo: Restituire i dettagli completi (incluse le domande) di uno specifico quiz.
- * Il parametro ':id' nell'URL è dinamico e accessibile tramite req.params.id
  */
 router.get('/:id', (req, res) => {
     const quizzes = getQuizzes();

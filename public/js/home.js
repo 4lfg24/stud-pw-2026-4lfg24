@@ -5,7 +5,7 @@
  */
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. RIFERIMENTI AL DOM: "Agganciamo" gli elementi HTML tramite i loro ID
+    // Prendiamo gli elementi del DOM importanti della home
     const loadingState = document.getElementById('loading-state'); // Spinner
     const errorState = document.getElementById('error-state');     // Banner errore (es. server offline)
     const emptyState = document.getElementById('empty-state');     // Nessun quiz nel DB
@@ -40,10 +40,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Valutazione degli stati (successo o lista vuota)
             if (quizzes.length === 0) {
-                // Caso: Array vuoto -> Mostriamo lo stato Empty
                 emptyState.classList.remove('hidden');
             } else {
-                // Caso: Array pieno -> "Disegniamo" l'HTML e mostriamo la griglia
                 renderQuizzes(quizzes);
                 quizGrid.classList.remove('hidden');
             }
@@ -76,12 +74,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Associa un ascoltatore di eventi al tasto "Riprova": al 'click', esegui nuovamente loadQuizzes
     retryBtn.addEventListener('click', loadQuizzes);
 
-    // Logica per aggiornare l'interfaccia utente in base all'autenticazione
+    // Logica per aggiornare l'interfaccia utente se quest'ultimo è autenticato
     const authNavItem = document.getElementById('auth-nav-item');
     if (authNavItem) {
         const token = localStorage.getItem('auth_token');
         const username = localStorage.getItem('username');
         if (token && username) {
+            //aggiungiamo i due bottoni
             authNavItem.innerHTML = `
                 <a href="scores.html" id="scores-btn" style="margin-right: 15px; cursor: pointer;">Mostra punteggi</a>
                 <a href="#" id="logout-btn">Logout (${username})</a>
